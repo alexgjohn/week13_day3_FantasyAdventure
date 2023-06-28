@@ -11,10 +11,10 @@ public abstract class Player {
 
     private ArrayList<Loot> inventory;
 
-    public Player(String name, int hp, ArrayList<Loot> inventory) {
+    public Player(String name) {
         this.name = name;
-        this.hp = hp;
-        this.inventory = inventory;
+        this.hp = 100;
+        this.inventory = new ArrayList<>();
     }
 
     public String getName() {
@@ -35,5 +35,9 @@ public abstract class Player {
 
     public ArrayList<Loot> getInventory() {
         return inventory;
+    }
+
+    public void addLoot(Loot loot) {
+        this.inventory.add(loot);
     }
 }
