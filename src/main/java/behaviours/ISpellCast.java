@@ -1,9 +1,10 @@
 package behaviours;
 
+import Enemies.Enemy;
 import enums.Spell;
 
 public interface ISpellCast {
-    public void castSpell();
+    public void castSpell(Enemy enemy);
     public Spell getSpell();
-    public void setSpell();
+    public void setSpell(Spell spell);
 }

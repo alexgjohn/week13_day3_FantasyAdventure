@@ -15,7 +15,7 @@ public abstract class Fighter extends Player implements IWeaponWield {
 
 
     public void useWeapon(Enemy enemy) {
-        enemy.setHp(enemy.getSpecies().getHp() - weapon.getDamage());
+        enemy.takeDamage(weapon.getDamage());
     }
 
     public Weapon getWeapon() {

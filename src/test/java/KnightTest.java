@@ -63,4 +63,10 @@ public class KnightTest {
         knight.useWeapon(goblin);
         assertEquals(15, goblin.getSpecies().getHp());
     }
+
+    @Test
+    public void canTakeReducedDamage(){
+        goblin.attack(knight);
+        assertEquals(95, knight.getHp());
+    }
 }
