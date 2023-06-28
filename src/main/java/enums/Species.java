@@ -21,4 +21,8 @@ public enum Species {
     public int getDamage() {
         return damage;
     }
+
+    public void setHp(int hp) {
+        this.hp = hp;
+    }
 }

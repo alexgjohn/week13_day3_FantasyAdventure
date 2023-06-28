@@ -13,4 +13,8 @@ public class Enemy {
     public Species getSpecies() {
         return species;
     }
+
+    public void setHp(int hp){
+        this.species.setHp(hp);
+    }
 }

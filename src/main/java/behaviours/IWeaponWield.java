@@ -1,10 +1,11 @@
 package behaviours;
 
+import Enemies.Enemy;
 import enums.Weapon;
 
 public interface IWeaponWield {
 
-    public void useWeapon();
+    public void useWeapon(Enemy enemy);
     public Weapon getWeapon();
-    public void setWeapon();
+    public void setWeapon(Weapon weapon);
 }
