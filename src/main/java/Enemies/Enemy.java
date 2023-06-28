@@ -1,12 +1,10 @@
 package Enemies;
 
-import Players.Barbarian;
 import Players.Player;
 import behaviours.IDamageable;
-import behaviours.IEncounterable;
 import enums.Species;
 
-public class Enemy implements IDamageable, IEncounterable {
+public class Enemy implements IDamageable{
 
     private Species species;
     private boolean alive;
@@ -42,11 +40,12 @@ public class Enemy implements IDamageable, IEncounterable {
     }
 
     public void attack(Player player) {
+
         player.takeDamage(this.species.getDamage());
+        if (player.getHp() <= 0){
+            player.die();
+        }
     }
 
-    @Override
-    public void encounter(Player player) {
 
-    }
 }

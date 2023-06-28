@@ -1,5 +1,6 @@
 package Players;
 
+import Enemies.Enemy;
 import Loot.Loot;
 import behaviours.IDamageable;
 
@@ -56,4 +57,6 @@ public abstract class Player implements IDamageable {
     public void die() {
         this.alive = false;
     }
+
+    public abstract void takeAction(Enemy enemy);
 }

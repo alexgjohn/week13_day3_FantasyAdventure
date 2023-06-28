@@ -41,4 +41,8 @@ public abstract class SpellCaster extends Player implements ISpellCast {
         int damageTaken = (damage - this.getCreature().getDamageReduction());
         setHp(getHp() - damageTaken);
     }
+
+    public void takeAction(Enemy enemy){
+        castSpell(enemy);
+    }
 }

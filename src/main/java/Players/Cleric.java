@@ -1,5 +1,6 @@
 package Players;
 
+import Enemies.Enemy;
 import behaviours.IHeal;
 import enums.HealingMethod;
 
@@ -26,5 +27,9 @@ public class Cleric extends Player implements IHeal {
     @Override
     public void setHealingMethod(HealingMethod healingMethod) {
         this.healingMethod = healingMethod;
+    }
+
+    public void takeAction(Enemy enemy){
+
     }
 }

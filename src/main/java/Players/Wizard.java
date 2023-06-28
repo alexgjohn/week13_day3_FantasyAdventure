@@ -14,4 +14,5 @@ public class Wizard extends SpellCaster{
         super.castSpell(enemy);
         super.castSpell(enemy);
     }
+
 }

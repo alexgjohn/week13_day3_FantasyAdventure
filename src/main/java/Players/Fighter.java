@@ -26,4 +26,8 @@ public abstract class Fighter extends Player implements IWeaponWield {
     public void setWeapon(Weapon weapon) {
         this.weapon = weapon;
     }
+
+    public void takeAction(Enemy enemy){
+        useWeapon(enemy);
+    }
 }

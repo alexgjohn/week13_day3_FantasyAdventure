@@ -1,9 +1,8 @@
 package Loot;
 
 import Players.Player;
-import behaviours.IEncounterable;
 
-public class Loot implements IEncounterable {
+public class Loot{
 
     private String name;
     private double monetaryValue;
@@ -21,8 +20,5 @@ public class Loot implements IEncounterable {
         return monetaryValue;
     }
 
-    @Override
-    public void encounter(Player player) {
-        player.addLoot(this);
-    }
+
 }
