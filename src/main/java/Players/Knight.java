@@ -13,4 +13,9 @@ public class Knight extends Fighter{
     public int getArmourStrength() {
         return armourStrength;
     }
+
+    public void takeDamage(int damage) {
+        int damageTaken = (damage - this.armourStrength);
+        setHp(getHp() - damageTaken);
+    }
 }
