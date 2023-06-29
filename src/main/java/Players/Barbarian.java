@@ -1,6 +1,7 @@
 package Players;
 
 import Enemies.Enemy;
+import behaviours.IDamageable;
 import enums.Weapon;
 
 public class Barbarian extends Fighter{
@@ -8,8 +9,9 @@ public class Barbarian extends Fighter{
         super(name, weapon);
     }
 
-    public void useWeapon(Enemy enemy){
+    public void useWeapon(IDamageable enemy){
         super.useWeapon(enemy);
         super.useWeapon(enemy);
     }
+
 }

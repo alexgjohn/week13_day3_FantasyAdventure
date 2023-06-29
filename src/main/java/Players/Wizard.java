@@ -1,6 +1,7 @@
 package Players;
 
 import Enemies.Enemy;
+import behaviours.IDamageable;
 import enums.Creature;
 import enums.Spell;
 
@@ -10,7 +11,7 @@ public class Wizard extends SpellCaster{
         super(name, spell, creature);
     }
 
-    public void castSpell(Enemy enemy){
+    public void castSpell(IDamageable enemy){
         super.castSpell(enemy);
         super.castSpell(enemy);
     }

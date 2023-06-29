@@ -1,6 +1,8 @@
 package Players;
 
 import Enemies.Enemy;
+import behaviours.IDamageable;
+import behaviours.IHeal;
 import behaviours.ISpellCast;
 import enums.Creature;
 import enums.Spell;
@@ -25,7 +27,7 @@ public abstract class SpellCaster extends Player implements ISpellCast {
         this.spell = spell;
     }
 
-    public void castSpell(Enemy enemy){
+    public void castSpell(IDamageable enemy){
         enemy.takeDamage(spell.getDamage());
     }
 
@@ -42,7 +44,7 @@ public abstract class SpellCaster extends Player implements ISpellCast {
         setHp(getHp() - damageTaken);
     }
 
-    public void takeAction(Enemy enemy){
+    public void takeAction(IDamageable enemy){
         castSpell(enemy);
     }
 }

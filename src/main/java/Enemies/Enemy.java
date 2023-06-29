@@ -14,6 +14,10 @@ public class Enemy implements IDamageable{
         this.alive = true;
     }
 
+    public int getHp(){
+        return species.getHp();
+    }
+
     public Species getSpecies() {
         return species;
     }
@@ -36,7 +40,10 @@ public class Enemy implements IDamageable{
 
     @Override
     public void die() {
+
         this.alive = false;
+        String death = String.format("The %s is dead!", getSpecies().name().toLowerCase());
+        System.out.println(death);
     }
 
     public void attack(Player player) {

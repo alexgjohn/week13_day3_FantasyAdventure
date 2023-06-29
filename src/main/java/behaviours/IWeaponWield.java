@@ -5,7 +5,7 @@ import enums.Weapon;
 
 public interface IWeaponWield {
 
-    public void useWeapon(Enemy enemy);
+    public void useWeapon(IDamageable enemy);
     public Weapon getWeapon();
     public void setWeapon(Weapon weapon);
 }

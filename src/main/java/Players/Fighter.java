@@ -1,6 +1,7 @@
 package Players;
 
 import Enemies.Enemy;
+import behaviours.IDamageable;
 import behaviours.IWeaponWield;
 import enums.Weapon;
 
@@ -14,7 +15,7 @@ public abstract class Fighter extends Player implements IWeaponWield {
     }
 
 
-    public void useWeapon(Enemy enemy) {
+    public void useWeapon(IDamageable enemy) {
         enemy.takeDamage(weapon.getDamage());
     }
 
@@ -27,7 +28,10 @@ public abstract class Fighter extends Player implements IWeaponWield {
         this.weapon = weapon;
     }
 
-    public void takeAction(Enemy enemy){
-        useWeapon(enemy);
+    public void takeAction(IDamageable creature){
+
+        String attack = String.format("%s attacked the enemy with their %s!", this.getName(), getWeapon().name().toLowerCase());
+        System.out.println(attack);
+        useWeapon(creature);
     }
 }

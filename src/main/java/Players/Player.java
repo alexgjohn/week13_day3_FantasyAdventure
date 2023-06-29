@@ -58,5 +58,5 @@ public abstract class Player implements IDamageable {
         this.alive = false;
     }
 
-    public abstract void takeAction(Enemy enemy);
+    public abstract void takeAction(IDamageable creature);
 }

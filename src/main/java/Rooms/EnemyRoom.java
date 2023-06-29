@@ -24,6 +24,10 @@ public class EnemyRoom extends Room{
         }
         if (player.isAlive() && !enemy.isAlive()){
             outcome = String.format("%s defeated the %s.", player.getName(), enemy.getSpecies().name().toLowerCase());
+        } else if (enemy.isAlive() && !player.isAlive()) {
+            outcome = String.format("The %s killed %s, oh my god!", enemy.getSpecies().name().toLowerCase(), player.getName());
+        } else {
+            outcome = String.format("%s and the %s both slew each other. In another life, they could have been friends.", player.getName(), enemy.getSpecies().name().toLowerCase());
         }
         return outcome;
     }

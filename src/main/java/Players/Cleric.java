@@ -1,6 +1,7 @@
 package Players;
 
 import Enemies.Enemy;
+import behaviours.IDamageable;
 import behaviours.IHeal;
 import enums.HealingMethod;
 
@@ -14,8 +15,7 @@ public class Cleric extends Player implements IHeal {
         this.healingMethod = healingMethod;
     }
 
-    @Override
-    public void heal(Player player) {
+    public void heal(IDamageable player) {
         int newHp = player.getHp() + this.healingMethod.getHPRegained();
         player.setHp(newHp);
     }
@@ -29,7 +29,21 @@ public class Cleric extends Player implements IHeal {
         this.healingMethod = healingMethod;
     }
 
-    public void takeAction(Enemy enemy){
+    public void unarmedStrike(IDamageable creature){
+        creature.takeDamage(10);
+    }
 
+
+    public void takeAction(IDamageable creature){
+        String result = creature.getClass().getName();
+        if (result.contains("Players")){
+            String outcome = String.format("%s healed their ally by %d points!", this.getName(), healingMethod.getHPRegained());
+            System.out.println(outcome);
+            heal(creature);
+        } else{
+            String outcome = String.format("%s punched the enemy!", this.getName());
+            System.out.println(outcome);
+            unarmedStrike(creature);
+        }
     }
 }
